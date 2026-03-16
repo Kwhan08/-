@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ฐานข้อมูลลักษณะทางกายภาพของสิ่งมีชีวิต</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #2e7d32; --accent: #ff8f00; --bg: #f5f5f5; }
+        body { font-family: 'Sarabun', sans-serif; background-color: var(--bg); color: #333; line-height: 1.6; margin: 0; padding: 0; }
+        header { background: var(--primary); color: #fff; padding: 30px; text-align: center; }
+        .container { max-width: 900px; margin: 20px auto; padding: 0 20px; }
+        
+        .instruction-box { background: #fff; padding: 20px; border-radius: 8px; border-left: 5px solid var(--accent); margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        
+        .tabs { display: flex; gap: 10px; margin-bottom: 20px; }
+        .tab-btn { padding: 10px 20px; border: 1px solid var(--primary); background: #fff; color: var(--primary); cursor: pointer; border-radius: 4px; font-weight: bold; }
+        .tab-btn.active { background: var(--primary); color: #fff; }
+        
+        .content-section { display: none; }
+        .content-section.active { display: block; }
+        
+        .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .card { background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #ddd; }
+        
+        .zoom-img { width: 100%; height: 200px; overflow: hidden; border-radius: 4px; cursor: zoom-in; margin-bottom: 10px; }
+        .zoom-img img { width: 100%; transition: transform 0.3s; }
+        .zoom-img:hover img { transform: scale(2); }
+        
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        td { padding: 8px; border-bottom: 1px solid #eee; font-size: 14px; }
+        .label { font-weight: bold; width: 40%; color: #555; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>ฐานข้อมูลวิเคราะห์การปรับตัวของสิ่งมีชีวิต</h1>
+</header>
+
+<div class="container">
+    <div class="instruction-box">
+        <h3>คำแนะนำในการใช้งาน:</h3>
+        <p>นักเรียนสามารถศึกษาลักษณะภายนอกของสิ่งมีชีวิตจากฐานข้อมูลด้านล่าง เพื่อนำไปใช้เป็นหลักฐานประกอบการวิเคราะห์ในใบกิจกรรม ดังนี้:</p>
+        <ul>
+            <li>สังเกตลักษณะอวัยวะจากภาพ (สามารถเลื่อนเมาส์บนภาพเพื่อขยายรายละเอียด)</li>
+            <li>วิเคราะห์ความสัมพันธ์ระหว่างโครงสร้างและหน้าที่จากข้อมูลในตาราง</li>
+            <li>บันทึกผลการวิเคราะห์และระบุเหตุผลสนับสนุนความเหมาะสมต่อแหล่งที่อยู่ลงในใบกิจกรรม</li>
+        </ul>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="showTab('movement')">การเคลื่อนที่</button>
+        <button class="tab-btn" onclick="showTab('structure')">โครงสร้างและลำต้น</button>
+        <button class="tab-btn" onclick="showTab('protection')">การป้องกันตัวและอุณหภูมิ</button>
+    </div>
+
+    <div id="movement" class="content-section active">
+        <div class="card-grid">
+            <div class="card">
+                <h4>รหัสข้อมูล: ID-M01</h4>
+                <div class="zoom-img"><img src="https://images.unsplash.com/photo-1555169062-013468b47731?w=600" alt="พังผืด"></div>
+                <table>
+                    <tr><td class="label">ลักษณะ:</td><td>มีแผ่นหนังเชื่อมระหว่างนิ้วเท้า</td></tr>
+                    <tr><td class="label">การวิเคราะห์:</td><td>เพิ่มพื้นที่ผิวในการต้านแรงดันน้ำ</td></tr>
+                </table>
+            </div>
+            <div class="card">
+                <h4>รหัสข้อมูล: ID-M02</h4>
+                <div class="zoom-img"><img src="https://images.unsplash.com/photo-1523438097204-5447bc05ec1a?w=600" alt="เท้าไก่"></div>
+                <table>
+                    <tr><td class="label">ลักษณะ:</td><td>นิ้วแยกออกจากกัน มีเล็บแหลมคม</td></tr>
+                    <tr><td class="label">การวิเคราะห์:</td><td>เหมาะสมสำหรับการจิกคุ้ยและการทรงตัวบนพื้นแข็ง</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <div id="structure" class="content-section">
+        <div class="card-grid">
+            <div class="card">
+                <h4>รหัสข้อมูล: ID-S01</h4>
+                <div class="zoom-img"><img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=600" alt="พืชน้ำ"></div>
+                <table>
+                    <tr><td class="label">ลักษณะ:</td><td>มีเนื้อเยื่อรูพรุนภายในก้าน</td></tr>
+                    <tr><td class="label">การวิเคราะห์:</td><td>มีความหนาแน่นต่ำ ช่วยในการลอยตัว</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="protection" class="content-section">
+        <div class="card-grid">
+            <div class="card">
+                <h4>รหัสข้อมูล: ID-P01</h4>
+                <div class="zoom-img"><img src="https://images.unsplash.com/photo-1589656966895-2f33e7653819?w=600" alt="ขนสัตว์"></div>
+                <table>
+                    <tr><td class="label">ลักษณะ:</td><td>ชั้นไขมันหนาและขนแน่น</td></tr>
+                    <tr><td class="label">การวิเคราะห์:</td><td>ลดการสูญเสียความร้อนในสภาวะอุณหภูมิต่ำ</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showTab(tabId) {
+        document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById(tabId).classList.add('active');
+        event.currentTarget.classList.add('active');
+    }
+</script>
+
+</body>
+</html>
